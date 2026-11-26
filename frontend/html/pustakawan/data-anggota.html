@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Data Anggota - E-Perpustakaan</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet"
+  />
+<link href="../../css/shared/variables.css" rel="stylesheet"/>
+  <link href="../../css/shared/base.css" rel="stylesheet"/>
+  <link href="../../css/shared/utilities.css" rel="stylesheet"/>
+  <link href="../../css/shared/components.css" rel="stylesheet"/>
+  <link href="../../css/shared/layout.css" rel="stylesheet"/>
+<link href="../../css/pustakawan/pustakawan.css" rel="stylesheet"/>
+<link href="../../css/shared/responsive.css" rel="stylesheet"/>
+</head>
+<body>
+<svg aria-hidden="true" class="icon-sprite">
+    <symbol id="i-book" viewBox="0 0 24 24">
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+    </symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24">
+      <rect height="7" width="7" x="3" y="3"></rect>
+      <rect height="7" width="7" x="14" y="3"></rect>
+      <rect height="7" width="7" x="14" y="14"></rect>
+      <rect height="7" width="7" x="3" y="14"></rect>
+    </symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24">
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+      <path d="m16 17 5-5-5-5"></path>
+      <path d="M21 12H9"></path>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="m21 21-4.3-4.3"></path>
+    </symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24">
+      <path d="M17 1l4 4-4 4"></path>
+      <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+      <path d="M7 23l-4-4 4-4"></path>
+      <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+    </symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24">
+      <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6"></path>
+    </symbol>
+    <symbol id="i-users" viewBox="0 0 24 24">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+      <circle cx="9" cy="7" r="4"></circle>
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path>
+    </symbol>
+  </svg>
+<div class="admin-layout">
+<aside class="sidebar">
+      <div class="brand brand--light">
+        <span class="brand__icon">
+          <svg aria-hidden="true" class="icon">
+            <use href="#i-book"></use>
+          </svg>
+        </span>
+        <span class="brand__name">E-Perpustakaan</span>
+      </div>
+      <nav aria-label="Menu pustakawan" class="sidebar__nav">
+        <a
+          class="sidebar__link"
+          data-route="beranda.html"
+          role="link"
+          tabindex="0"
+        >
+          <svg aria-hidden="true" class="icon icon--sm">
+            <use href="#i-grid"></use>
+          </svg>
+          Beranda
+        </a>
+        <a
+          class="sidebar__link"
+          data-route="data-buku.html"
+          role="link"
+          tabindex="0"
+        >
+          <svg aria-hidden="true" class="icon icon--sm">
+            <use href="#i-book"></use>
+          </svg>
+          Data Buku
+        </a>
+        <a
+          aria-current="page"
+          class="sidebar__link sidebar__link--active"
+          data-route="data-anggota.html"
+          role="link"
+          tabindex="0"
+        >
+          <svg aria-hidden="true" class="icon icon--sm">
+            <use href="#i-users"></use>
+          </svg>
+          Data Anggota
+        </a>
+        <a
+          class="sidebar__link"
+          data-route="transaksi.html"
+          role="link"
+          tabindex="0"
+        >
+          <svg aria-hidden="true" class="icon icon--sm">
+            <use href="#i-swap"></use>
+          </svg>
+          Transaksi
+        </a>
+        <a
+          class="sidebar__link sidebar__link--logout"
+          data-route="../auth/login/pustakawan.html"
+          role="link"
+          tabindex="0"
+        >
+          <svg aria-hidden="true" class="icon icon--sm">
+            <use href="#i-logout"></use>
+          </svg>
+          Keluar
+        </a>
+      </nav>
+    </aside>
+<main class="admin-content">
+      <h1 class="page-title">Data Anggota</h1>
+<section aria-label="Pencarian" class="panel">
+        <div
+          class="search-bar"
+          data-search-form="members"
+          role="search"
+        >
+          <div class="input-field search-bar__field">
+            <span class="input-field__icon">
+              <svg aria-hidden="true" class="icon icon--sm">
+                <use href="#i-search"></use>
+              </svg>
+            </span>
+            <label class="visually-hidden" for="keyword">Cari nama anggota...</label>
+            <input
+              class="search-bar__input"
+              id="keyword"
+              name="keyword"
+              placeholder="Cari nama anggota..."
+              type="search"
+            />
+          </div>
+          <button
+            class="btn btn--navy search-bar__button"
+            data-action="search-members"
+            type="button"
+          >Cari</button>
+        </div>
+      </section>
+<section class="panel table-wrap">
+        <table class="data-table">
+          <caption class="visually-hidden">
+            Daftar anggota perpustakaan
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">NO</th>
+              <th scope="col">NAMA</th>
+              <th scope="col">NPM</th>
+              <th scope="col">PRODI</th>
+              <th scope="col">AKSI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="member-empty-state" colspan="5" role="status">Memuat data anggota...</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+<script defer src="../../js/shared/app.js"></script>
+<script defer src="../../js/pustakawan/anggota.js"></script>
+</body>
+</html>

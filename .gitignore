@@ -1,0 +1,13 @@
+# Kredensial dan konfigurasi lokal
+.env
+.env.*
+backend/config/database.local.php
+
+# Backup database lokal
+database/backups/
+*.bak.sql
+*.dump
+
+# File sistem/editor
+.DS_Store
+Thumbs.db

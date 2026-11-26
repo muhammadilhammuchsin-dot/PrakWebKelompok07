@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="#00236f" name="theme-color"/>
+  <title>Transaksi Peminjaman - E-Perpustakaan</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet"
+  />
+<link href="../../css/shared/variables.css" rel="stylesheet"/>
+  <link href="../../css/shared/base.css" rel="stylesheet"/>
+  <link href="../../css/shared/utilities.css" rel="stylesheet"/>
+  <link href="../../css/shared/components.css" rel="stylesheet"/>
+  <link href="../../css/shared/layout.css" rel="stylesheet"/>
+<link href="../../css/pustakawan/pustakawan.css" rel="stylesheet"/>
+  <link href="../../css/shared/responsive.css" rel="stylesheet"/>
+  <link href="../../css/pustakawan/transaksi.css" rel="stylesheet"/>
+</head>
+<body class="transaction-page">
+<svg aria-hidden="true" class="icon-sprite">
+    <symbol id="i-book" viewBox="0 0 24 24">
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+    </symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24">
+      <rect height="7" width="7" x="3" y="3"></rect>
+      <rect height="7" width="7" x="14" y="3"></rect>
+      <rect height="7" width="7" x="14" y="14"></rect>
+      <rect height="7" width="7" x="3" y="14"></rect>
+    </symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24">
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+      <path d="m16 17 5-5-5-5"></path>
+      <path d="M21 12H9"></path>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="m21 21-4.3-4.3"></path>
+    </symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24">
+      <path d="M17 1l4 4-4 4"></path>
+      <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+      <path d="M7 23l-4-4 4-4"></path>
+      <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+    </symbol>
+    <symbol id="i-users" viewBox="0 0 24 24">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+      <circle cx="9" cy="7" r="4"></circle>
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path>
+    </symbol>
+  </svg>
+<div class="admin-layout">
+<aside class="sidebar">
+      <div class="brand brand--light">
+        <span class="brand__icon">
+          <svg aria-hidden="true" class="icon">
+            <use href="#i-book"></use>
+          </svg>
+        </span>
+        <span class="brand__name">E-Perpustakaan</span>
+      </div>
+      <nav aria-label="Menu pustakawan" class="sidebar__nav">
+        <a
+          class="sidebar__link"
+          data-route="beranda.html"
+          href="beranda.html"
+        >
+          <svg aria-hidden="true" class="icon icon--sm">
+            <use href="#i-grid"></use>
+          </svg>
+          <span>Beranda</span>
+        </a>
+        <a
+          class="sidebar__link"
+          data-route="data-buku.html"
+          href="data-buku.html"
+        >
+          <svg aria-hidden="true" class="icon icon--sm">
+            <use href="#i-book"></use>
+          </svg>
+          <span>Data Buku</span>
+        </a>
+        <a
+          class="sidebar__link"
+          data-route="data-anggota.html"
+          href="data-anggota.html"
+        >
+          <svg aria-hidden="true" class="icon icon--sm">
+            <use href="#i-users"></use>
+          </svg>
+          <span>Data Anggota</span>
+        </a>
+        <a
+          aria-current="page"
+          class="sidebar__link sidebar__link--active"
+          data-route="transaksi.html"
+          href="transaksi.html"
+        >
+          <svg aria-hidden="true" class="icon icon--sm">
+            <use href="#i-swap"></use>
+          </svg>
+          <span>Transaksi</span>
+        </a>
+        <a
+          class="sidebar__link sidebar__link--logout"
+          data-route="../auth/login/pustakawan.html"
+          href="../auth/login/pustakawan.html"
+        >
+          <svg aria-hidden="true" class="icon icon--sm">
+            <use href="#i-logout"></use>
+          </svg>
+          <span>Keluar</span>
+        </a>
+      </nav>
+    </aside>
+<main class="admin-content transaction-content">
+<header class="transaction-heading">
+        <h1 class="page-title">Transaksi Peminjaman</h1>
+      </header>
+<section
+        aria-label="Pencarian transaksi"
+        class="panel transaction-search"
+      >
+        <form
+          class="transaction-search__form"
+          data-search-form="transactions"
+          id="transactionSearchForm"
+          role="search"
+        >
+          <label
+            class="transaction-search__field"
+            for="keyword"
+          >
+            <svg aria-hidden="true" class="icon">
+              <use href="#i-search"></use>
+            </svg>
+            <input
+              aria-label="Cari ID transaksi, anggota, atau buku"
+              autocomplete="off"
+              id="keyword"
+              name="keyword"
+              placeholder="ID Buku"
+              type="search"
+            />
+          </label>
+          <button
+            class="transaction-search__button"
+            data-action="search-transactions"
+            type="submit"
+          >Cari</button>
+        </form>
+      </section>
+<section
+        aria-labelledby="transactionTableTitle"
+        class="panel transaction-table-panel"
+      >
+        <header class="transaction-table-panel__header">
+          <span
+            aria-hidden="true"
+            class="transaction-table-panel__indicator"
+          ></span>
+          <h2 id="transactionTableTitle">Daftar Transaksi Sirkulasi</h2>
+        </header>
+        <div class="transaction-table-scroll">
+          <table class="transaction-table">
+            <caption class="visually-hidden">
+              Daftar transaksi peminjaman dan pengembalian buku
+            </caption>
+            <colgroup>
+              <col class="transaction-col-id"/>
+              <col class="transaction-col-member"/>
+              <col class="transaction-col-program"/>
+              <col class="transaction-col-book"/>
+              <col class="transaction-col-date"/>
+              <col class="transaction-col-status"/>
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">ANGGOTA</th>
+                <th scope="col">PRODI</th>
+                <th scope="col">BUKU</th>
+                <th scope="col">TANGGAL</th>
+                <th scope="col">STATUS</th>
+              </tr>
+            </thead>
+            <tbody id="transactionTableBody">
+              <tr>
+                <td
+                  class="transaction-empty"
+                  colspan="6"
+                  role="status"
+                >Memuat data transaksi...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+<script defer src="../../js/shared/app.js"></script>
+<script defer src="../../js/pustakawan/transaksi.js"></script>
+</body>
+</html>

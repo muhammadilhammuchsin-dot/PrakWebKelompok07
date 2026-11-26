@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Laporan Kepala Perpustakaan - E-Perpustakaan</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="../../css/shared/variables.css" rel="stylesheet"/>
+    <link href="../../css/shared/base.css" rel="stylesheet"/>
+    <link href="../../css/shared/utilities.css" rel="stylesheet"/>
+    <link href="../../css/shared/components.css" rel="stylesheet"/>
+    <link href="../../css/shared/layout.css" rel="stylesheet"/>
+<link href="../../css/kepus/kepus.css" rel="stylesheet"/>
+<link href="../../css/shared/responsive.css" rel="stylesheet"/>
+</head>
+<body class="kepus-report" data-kepus-protected="true">
+<svg aria-hidden="true" class="icon-sprite">
+        <symbol id="i-logout" viewBox="0 0 24 24">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <path d="m16 17 5-5-5-5"></path>
+            <path d="M21 12H9"></path>
+        </symbol>
+    </svg>
+<header class="report-header">
+        <div class="report-header__inner">
+            <h1 class="report-header__title">LAPORAN KEPALA PERPUSTAKAAN</h1>
+            <a
+                class="report__logout"
+                data-route="../auth/login/kepus.html"
+                href="../auth/login/kepus.html"
+            >
+                <svg aria-hidden="true" class="icon icon--sm">
+                    <use href="#i-logout"></use>
+                </svg>
+                <span>Keluar</span>
+            </a>
+        </div>
+    </header>
+    <main class="page report-page">
+<section aria-label="Filter periode laporan" class="panel period-picker">
+            <label class="period-picker__label" for="period">PERIODE</label>
+            <select class="period-picker__select" id="period" name="period">
+                <option>September 2026</option>
+                <option>Oktober 2026</option>
+                <option>November 2026</option>
+                <option>Desember 2026</option>
+            </select>
+<button
+                class="period-picker__download"
+                disabled
+                id="downloadMonthlyReport"
+                type="button"
+            >
+                <svg
+                    aria-hidden="true"
+                    fill="none"
+                    height="15"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="15"
+                >
+                    <path d="M12 3v12m-5-5 5 5 5-5"></path>
+                    <path d="M4 17v3h16v-3"></path>
+                </svg>
+                Download PDF
+            </button>
+        </section>
+<section aria-label="Ringkasan perpustakaan" class="stats">
+            <article class="stat-card">
+                <h2 class="stat-card__label">TOTAL ANGGOTA</h2>
+                <p class="stat-card__value">—</p>
+            </article>
+            <article class="stat-card">
+                <h2 class="stat-card__label">TOTAL BUKU</h2>
+                <p class="stat-card__value">—</p>
+            </article>
+        </section>
+<section class="panel report-panel report-panel--donut">
+            <header class="report-panel__header">
+                <h2 class="panel__title">Distribusi peminjaman berdasarkan kategori</h2>
+            </header>
+            <div class="chart-row">
+<div
+                    aria-label="Diagram distribusi peminjaman berdasarkan kategori"
+                    class="donut"
+                    role="img"
+                >
+                    <span class="donut__hole">0%</span>
+                </div>
+<ul aria-label="Legenda kategori buku" class="legend">
+                    <li class="legend__item">
+                        <span class="legend__dot legend__dot--1"></span>
+                        <span class="legend__label">Teknologi &amp; Informatika</span>
+                        <strong>0%</strong>
+                    </li>
+                    <li class="legend__item">
+                        <span class="legend__dot legend__dot--2"></span>
+                        <span class="legend__label">Sains &amp; Matematika</span>
+                        <strong>0%</strong>
+                    </li>
+                    <li class="legend__item">
+                        <span class="legend__dot legend__dot--3"></span>
+                        <span class="legend__label">Sosial &amp; Bisnis</span>
+                        <strong>0%</strong>
+                    </li>
+                    <li class="legend__item">
+                        <span class="legend__dot legend__dot--4"></span>
+                        <span class="legend__label">Sastra &amp; Bahasa</span>
+                        <strong>0%</strong>
+                    </li>
+                </ul>
+            </div>
+        </section>
+<section class="panel report-panel report-panel--bars">
+            <header class="report-panel__header">
+                <h2 class="panel__title">Diagram peminjaman buku</h2>
+            </header>
+            <div
+                aria-label="Diagram peminjaman buku berdasarkan kategori"
+                class="bar-chart"
+                role="img"
+            >
+<ol aria-hidden="true" class="bar-chart__axis">
+                    <li>100%</li>
+                    <li>75%</li>
+                    <li>50%</li>
+                    <li>25%</li>
+                    <li>0%</li>
+                </ol>
+                <div class="bar-chart__body">
+<ul class="bar-chart__plot">
+                        <li class="bar-chart__item">
+                            <span>0%</span>
+                            <span class="bar-chart__bar bar-chart__bar--1" style="height:0%;min-height:0"></span>
+                        </li>
+                        <li class="bar-chart__item">
+                            <span>0%</span>
+                            <span class="bar-chart__bar bar-chart__bar--2" style="height:0%;min-height:0"></span>
+                        </li>
+                        <li class="bar-chart__item">
+                            <span>0%</span>
+                            <span class="bar-chart__bar bar-chart__bar--3" style="height:0%;min-height:0"></span>
+                        </li>
+                        <li class="bar-chart__item">
+                            <span>0%</span>
+                            <span class="bar-chart__bar bar-chart__bar--4" style="height:0%;min-height:0"></span>
+                        </li>
+                    </ul>
+<ul class="bar-chart__labels">
+                        <li>
+                            Teknologi
+                            <span class="bar-chart__note">0 transaksi</span>
+                        </li>
+                        <li>
+                            Sains
+                            <span class="bar-chart__note">0 transaksi</span>
+                        </li>
+                        <li>
+                            Sastra
+                            <span class="bar-chart__note">0 transaksi</span>
+                        </li>
+                        <li>
+                            Sosial
+                            <span class="bar-chart__note">0 transaksi</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+<p
+                aria-live="polite"
+                class="report-feedback"
+                data-report-feedback
+                role="status"
+            ></p>
+        </section>
+    </main>
+<script defer src="../../js/shared/app.js?v=20261115-4"></script>
+<script defer src="../../js/kepus/laporan.js?v=20261115-4"></script>
+<script defer src="../../js/kepus/laporan-pdf.js?v=20261115-4"></script>
+</body>
+</html>

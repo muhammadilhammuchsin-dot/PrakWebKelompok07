@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Daftar Akun Pustakawan - E-Perpustakaan</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="../../../css/shared/variables.css" rel="stylesheet"/>
+  <link href="../../../css/shared/base.css" rel="stylesheet"/>
+  <link href="../../../css/shared/utilities.css" rel="stylesheet"/>
+  <link href="../../../css/shared/components.css" rel="stylesheet"/>
+  <link href="../../../css/auth/auth.css" rel="stylesheet"/>
+  <link href="../../../css/shared/layout.css" rel="stylesheet"/>
+  <link href="../../../css/shared/responsive.css" rel="stylesheet"/>
+ </head>
+ <body class="auth-register">
+  <svg aria-hidden="true" class="icon-sprite">
+   <symbol id="i-arrow-left" viewbox="0 0 24 24">
+    <path d="M19 12H5M12 19l-7-7 7-7">
+    </path>
+   </symbol>
+   <symbol id="i-user" viewbox="0 0 24 24">
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2">
+    </path>
+    <circle cx="12" cy="7" r="4">
+    </circle>
+   </symbol>
+   <symbol id="i-id-card" viewbox="0 0 24 24">
+    <rect height="16" rx="2" width="18" x="3" y="4">
+    </rect>
+    <circle cx="8" cy="10" r="2">
+    </circle>
+    <path d="M5.5 16c.7-1.5 1.5-2 2.5-2s1.8.5 2.5 2M14 9h4M14 13h4">
+    </path>
+   </symbol>
+   <symbol id="i-lock" viewbox="0 0 24 24">
+    <rect height="11" rx="2" width="18" x="3" y="11">
+    </rect>
+    <path d="M7 11V7a5 5 0 0 1 10 0v4">
+    </path>
+   </symbol>
+   <symbol id="i-shield-check" viewbox="0 0 24 24">
+    <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z">
+    </path>
+    <path d="m9 12 2 2 4-4">
+    </path>
+   </symbol>
+   <symbol id="i-eye" viewbox="0 0 24 24">
+    <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z">
+    </path>
+    <circle cx="12" cy="12" r="3">
+    </circle>
+   </symbol>
+  </svg>
+  <main class="auth-page">
+   <section aria-labelledby="judul" class="auth-card register-card">
+    <header class="register-header">
+     <a aria-label="Kembali ke login Pustakawan" class="register-back" href="../login/pustakawan.html">
+      <svg aria-hidden="true" class="icon">
+       <use href="#i-arrow-left">
+       </use>
+      </svg>
+     </a>
+     <h1 class="register-title" id="judul">Buat Akun</h1>
+    </header>
+    <form class="form register-form" data-auth-form="register" data-user-role="pustakawan" method="post" novalidate="">
+     <input name="role" type="hidden" value="pustakawan"/>
+     <div class="form__group register-group">
+      <label class="form__label register-label" for="nama">Masukkan nama lengkap</label>
+      <div class="input-field register-input-field">
+       <span class="input-field__icon register-input-icon">
+        <svg aria-hidden="true" class="icon">
+         <use href="#i-user">
+         </use>
+        </svg>
+       </span>
+       <input aria-describedby="nama-error" autocomplete="name" class="form__input form__input--icon register-input" id="nama" maxlength="100" minlength="3" name="nama" placeholder="Nama Lengkap" required="" type="text"/>
+      </div>
+      <p class="form__error register-error" data-error-for="nama" hidden="" id="nama-error" role="alert">
+      </p>
+     </div>
+     <div class="form__group register-group">
+      <label class="form__label register-label" for="npm">Masukkan NIP/kode pustakawan</label>
+      <div class="input-field register-input-field">
+       <span class="input-field__icon register-input-icon">
+        <svg aria-hidden="true" class="icon">
+         <use href="#i-id-card">
+         </use>
+        </svg>
+       </span>
+       <input aria-describedby="npm-error" autocomplete="username" class="form__input form__input--icon register-input" id="npm" maxlength="40" minlength="3" name="npm" placeholder="NIP / Kode Pustakawan" required="" type="text"/>
+      </div>
+      <p class="form__error register-error" data-error-for="npm" hidden="" id="npm-error" role="alert">
+      </p>
+     </div>
+     <div class="form__group register-group">
+      <label class="form__label register-label" for="password">Masukkan Password anda</label>
+      <div class="input-field register-input-field">
+       <span class="input-field__icon register-input-icon">
+        <svg aria-hidden="true" class="icon">
+         <use href="#i-lock">
+         </use>
+        </svg>
+       </span>
+       <input aria-describedby="password-error" autocomplete="new-password" class="form__input form__input--icon form__input--with-toggle register-input" id="password" minlength="8" name="password" placeholder="Password" required="" type="password"/>
+       <button aria-label="Tampilkan password" aria-pressed="false" class="input-field__toggle register-toggle" data-toggle-password="password" type="button">
+        <svg aria-hidden="true" class="icon">
+         <use href="#i-eye">
+         </use>
+        </svg>
+       </button>
+      </div>
+      <p class="form__error register-error" data-error-for="password" hidden="" id="password-error" role="alert">
+      </p>
+     </div>
+     <div class="form__group register-group">
+      <label class="form__label register-label" for="konfirmasi_password">Konfirmasi password anda</label>
+      <div class="input-field register-input-field">
+       <span class="input-field__icon register-input-icon">
+        <svg aria-hidden="true" class="icon">
+         <use href="#i-shield-check">
+         </use>
+        </svg>
+       </span>
+       <input aria-describedby="konfirmasi-password-error" autocomplete="new-password" class="form__input form__input--icon form__input--with-toggle register-input" id="konfirmasi_password" name="konfirmasi_password" placeholder="Password yang sama" required="" type="password"/>
+       <button aria-label="Tampilkan konfirmasi password" aria-pressed="false" class="input-field__toggle register-toggle" data-toggle-password="konfirmasi_password" type="button">
+        <svg aria-hidden="true" class="icon">
+         <use href="#i-eye">
+         </use>
+        </svg>
+       </button>
+      </div>
+      <p class="form__error register-error" data-error-for="konfirmasi_password" hidden="" id="konfirmasi-password-error" role="alert">
+      </p>
+     </div>
+     <button class="btn btn--primary register-submit" type="submit">Daftar</button>
+     <p aria-live="polite" class="auth-feedback register-feedback" data-auth-feedback="" hidden="" role="status">
+     </p>
+    </form>
+   </section>
+  </main>
+  <script defer="" src="../../../js/shared/app.js">
+  </script>
+  <script defer="" src="../../../js/auth/staff-auth.js">
+  </script>
+ </body>
+</html>

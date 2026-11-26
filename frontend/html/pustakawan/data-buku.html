@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="#082b70" name="theme-color"/>
+  <title>Data Buku - E-Perpustakaan</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="../../css/shared/variables.css" rel="stylesheet"/>
+  <link href="../../css/shared/base.css" rel="stylesheet"/>
+  <link href="../../css/shared/utilities.css" rel="stylesheet"/>
+  <link href="../../css/shared/components.css" rel="stylesheet"/>
+  <link href="../../css/shared/layout.css" rel="stylesheet"/>
+  <link href="../../css/pustakawan/pustakawan.css" rel="stylesheet"/>
+  <link href="../../css/pustakawan/data-buku.css" rel="stylesheet"/>
+  <link href="../../css/shared/responsive.css" rel="stylesheet"/>
+ </head>
+ <body class="db-page">
+  <svg aria-hidden="true" class="icon-sprite" xmlns="http://www.w3.org/2000/svg">
+   <symbol id="i-book" viewbox="0 0 24 24">
+    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z">
+    </path>
+    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z">
+    </path>
+   </symbol>
+   <symbol id="i-grid" viewbox="0 0 24 24">
+    <rect height="7" width="7" x="3" y="3">
+    </rect>
+    <rect height="7" width="7" x="14" y="3">
+    </rect>
+    <rect height="7" width="7" x="14" y="14">
+    </rect>
+    <rect height="7" width="7" x="3" y="14">
+    </rect>
+   </symbol>
+   <symbol id="i-users" viewbox="0 0 24 24">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2">
+    </path>
+    <circle cx="9" cy="7" r="4">
+    </circle>
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75">
+    </path>
+   </symbol>
+   <symbol id="i-swap" viewbox="0 0 24 24">
+    <path d="M17 1l4 4-4 4M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4M21 13v2a4 4 0 0 1-4 4H3">
+    </path>
+   </symbol>
+   <symbol id="i-logout" viewbox="0 0 24 24">
+    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9">
+    </path>
+   </symbol>
+   <symbol id="i-search" viewbox="0 0 24 24">
+    <circle cx="11" cy="11" r="8">
+    </circle>
+    <path d="m21 21-4.3-4.3">
+    </path>
+   </symbol>
+   <symbol id="i-table" viewbox="0 0 24 24">
+    <rect height="16" rx="1" width="18" x="3" y="4">
+    </rect>
+    <path d="M3 9h18M8 9v11">
+    </path>
+   </symbol>
+   <symbol id="i-plus-circle" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="9">
+    </circle>
+    <path d="M12 8v8M8 12h8">
+    </path>
+   </symbol>
+   <symbol id="i-edit" viewbox="0 0 24 24">
+    <path d="M12 20h9">
+    </path>
+    <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L8 18l-4 1 1-4Z">
+    </path>
+   </symbol>
+   <symbol id="i-trash" viewbox="0 0 24 24">
+    <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6">
+    </path>
+   </symbol>
+  </svg>
+  <div class="admin-layout db-layout">
+   <aside aria-label="Navigasi utama pustakawan" class="sidebar">
+    <div class="brand brand--light">
+     <span class="brand__icon">
+      <svg aria-hidden="true" class="icon">
+       <use href="#i-book">
+       </use>
+      </svg>
+     </span>
+     <span class="brand__name">E-Perpustakaan</span>
+    </div>
+    <nav aria-label="Menu pustakawan" class="sidebar__nav">
+     <a class="sidebar__link" data-route="beranda.html" href="beranda.html">
+      <svg aria-hidden="true" class="icon icon--sm">
+       <use href="#i-grid">
+       </use>
+      </svg>
+      <span>Beranda</span>
+     </a>
+     <a aria-current="page" class="sidebar__link sidebar__link--active" data-route="data-buku.html" href="data-buku.html">
+      <svg aria-hidden="true" class="icon icon--sm">
+       <use href="#i-book">
+       </use>
+      </svg>
+      <span>Data Buku</span>
+     </a>
+     <a class="sidebar__link" data-route="data-anggota.html" href="data-anggota.html">
+      <svg aria-hidden="true" class="icon icon--sm">
+       <use href="#i-users">
+       </use>
+      </svg>
+      <span>Data Anggota</span>
+     </a>
+     <a class="sidebar__link" data-route="transaksi.html" href="transaksi.html">
+      <svg aria-hidden="true" class="icon icon--sm">
+       <use href="#i-swap">
+       </use>
+      </svg>
+      <span>Transaksi</span>
+     </a>
+     <a class="sidebar__link sidebar__link--logout" data-route="../auth/login/pustakawan.html" href="../auth/login/pustakawan.html">
+      <svg aria-hidden="true" class="icon icon--sm">
+       <use href="#i-logout">
+       </use>
+      </svg>
+      <span>Keluar</span>
+     </a>
+    </nav>
+   </aside>
+   <main class="admin-content db-content">
+    <div aria-hidden="true" class="db-topbar">
+    </div>
+    <div class="db-main">
+     <header class="db-page-header">
+      <h1>Data Buku</h1>
+      <a class="db-add-button" data-route="tambah-buku.html" href="tambah-buku.html">
+       <svg aria-hidden="true" class="icon">
+        <use href="#i-plus-circle">
+        </use>
+       </svg>
+       <span>Tambah Buku</span>
+      </a>
+     </header>
+     <form aria-label="Cari data buku" class="db-search-panel" id="bookSearchForm" role="search">
+      <label class="db-search-field" for="bookSearchInput">
+       <svg aria-hidden="true" class="icon">
+        <use href="#i-search">
+        </use>
+       </svg>
+       <input autocomplete="off" id="bookSearchInput" name="keyword" placeholder="Cari kode, judul, atau kategori buku..." type="search"/>
+      </label>
+      <button class="db-search-button" type="submit">Cari</button>
+     </form>
+     <section aria-labelledby="inventoryTitle" class="db-table-card">
+      <div class="db-table-card__header">
+       <h2 id="inventoryTitle">
+        <svg aria-hidden="true" class="icon">
+         <use href="#i-table">
+         </use>
+        </svg>
+        <span>Daftar Inventaris Koleksi Pustaka</span>
+       </h2>
+       <p aria-live="polite" class="db-book-count" id="bookCount">Menampilkan 3 dari 3 buku</p>
+      </div>
+      <div class="db-table-scroll">
+       <table class="db-table">
+        <caption class="visually-hidden">
+         Daftar inventaris seluruh buku perpustakaan
+        </caption>
+        <colgroup>
+         <col class="db-col-code"/>
+         <col class="db-col-title"/>
+         <col class="db-col-category"/>
+         <col class="db-col-stock"/>
+         <col class="db-col-actions"/>
+        </colgroup>
+        <thead>
+         <tr>
+          <th scope="col">KODE</th>
+          <th scope="col">JUDUL BUKU</th>
+          <th scope="col">KATEGORI</th>
+          <th scope="col">STOK TERSEDIA</th>
+          <th scope="col">AKSI</th>
+         </tr>
+        </thead>
+        <tbody id="bookTableBody">
+         <tr>
+          <td class="db-empty" colspan="5">Belum ada data buku. Data akan dimuat dari database setelah backend terhubung.</td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+     </section>
+     <p aria-live="polite" class="db-feedback" hidden="" id="bookFeedback" role="status">
+     </p>
+    </div>
+   </main>
+  </div>
+  <dialog aria-labelledby="editBookTitle" class="db-dialog" id="editBookDialog">
+   <form class="db-dialog__form" id="editBookForm">
+    <div class="db-dialog__header">
+     <div>
+      <p class="db-dialog__eyebrow">INVENTARIS KOLEKSI</p>
+      <h2 id="editBookTitle">Edit Data Buku</h2>
+     </div>
+     <button aria-label="Tutup dialog" class="db-dialog__close" id="closeEditDialog" type="button">×</button>
+    </div>
+    <div class="db-dialog__fields">
+     <div class="db-dialog__field">
+      <label for="editBookCode">Kode Buku</label>
+      <input id="editBookCode" maxlength="30" name="code" pattern="[A-Za-z0-9_-]+" required="" type="text"/>
+     </div>
+     <div class="db-dialog__field">
+      <label for="editBookName">Judul Buku</label>
+      <input id="editBookName" maxlength="200" name="title" required="" type="text"/>
+     </div>
+     <div class="db-dialog__field">
+      <label for="editBookCategory">Kategori</label>
+      <select id="editBookCategory" name="category" required="">
+       <option value="Teknologi &amp; Informatika">Teknologi &amp; Informatika</option>
+       <option value="Sains &amp; Matematika">Sains &amp; Matematika</option>
+       <option value="Sastra &amp; Bahasa">Sastra &amp; Bahasa</option>
+       <option value="Sosial &amp; Bisnis">Sosial &amp; Bisnis</option>
+       <option value="Informatika &amp; Komputer">Informatika &amp; Komputer</option>
+      </select>
+     </div>
+     <div class="db-dialog__field">
+      <label for="editBookStock">Stok Tersedia</label>
+      <input id="editBookStock" min="0" name="stock" required="" step="1" type="number"/>
+     </div>
+    </div>
+    <p class="db-dialog__feedback" hidden="" id="editBookFeedback" role="alert">
+    </p>
+    <div class="db-dialog__actions">
+     <button class="db-dialog__cancel" id="cancelEditDialog" type="button">Batal</button>
+     <button class="db-dialog__save" type="submit">Simpan Perubahan</button>
+    </div>
+   </form>
+  </dialog>
+  <script defer src="../../js/shared/app.js"></script>
+  <script defer src="../../js/pustakawan/data-buku.js"></script>
+</body>
+</html>

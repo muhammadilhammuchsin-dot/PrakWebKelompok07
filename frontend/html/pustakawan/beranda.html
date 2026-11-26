@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Beranda Pustakawan - E-Perpustakaan</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="../../css/shared/variables.css" rel="stylesheet"/>
+  <link href="../../css/shared/base.css" rel="stylesheet"/>
+  <link href="../../css/shared/utilities.css" rel="stylesheet"/>
+  <link href="../../css/shared/components.css" rel="stylesheet"/>
+  <link href="../../css/shared/layout.css" rel="stylesheet"/>
+  <link href="../../css/pustakawan/pustakawan.css" rel="stylesheet"/>
+  <link href="../../css/shared/responsive.css" rel="stylesheet"/>
+ </head>
+ <body class="pustakawan-home">
+  <svg aria-hidden="true" class="icon-sprite">
+   <symbol id="i-book" viewbox="0 0 24 24">
+    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z">
+    </path>
+    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z">
+    </path>
+   </symbol>
+   <symbol id="i-eye" viewbox="0 0 24 24">
+    <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z">
+    </path>
+    <circle cx="12" cy="12" r="3">
+    </circle>
+   </symbol>
+   <symbol id="i-grid" viewbox="0 0 24 24">
+    <rect height="7" width="7" x="3" y="3">
+    </rect>
+    <rect height="7" width="7" x="14" y="3">
+    </rect>
+    <rect height="7" width="7" x="14" y="14">
+    </rect>
+    <rect height="7" width="7" x="3" y="14">
+    </rect>
+   </symbol>
+   <symbol id="i-logout" viewbox="0 0 24 24">
+    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4">
+    </path>
+    <path d="m16 17 5-5-5-5">
+    </path>
+    <path d="M21 12H9">
+    </path>
+   </symbol>
+   <symbol id="i-profile" viewbox="0 0 24 24">
+    <circle cx="12" cy="12" r="10">
+    </circle>
+    <circle cx="12" cy="10" r="3">
+    </circle>
+    <path d="M7 20.7a5 5 0 0 1 10 0">
+    </path>
+   </symbol>
+   <symbol id="i-swap" viewbox="0 0 24 24">
+    <path d="M17 1l4 4-4 4">
+    </path>
+    <path d="M3 11V9a4 4 0 0 1 4-4h14">
+    </path>
+    <path d="M7 23l-4-4 4-4">
+    </path>
+    <path d="M21 13v2a4 4 0 0 1-4 4H3">
+    </path>
+   </symbol>
+   <symbol id="i-users" viewbox="0 0 24 24">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2">
+    </path>
+    <circle cx="9" cy="7" r="4">
+    </circle>
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75">
+    </path>
+   </symbol>
+  </svg>
+  <div class="admin-layout">
+   <aside class="sidebar">
+    <div class="brand brand--light">
+     <span class="brand__icon">
+      <svg aria-hidden="true" class="icon">
+       <use href="#i-book">
+       </use>
+      </svg>
+     </span>
+     <span class="brand__name">E-Perpustakaan</span>
+    </div>
+    <nav aria-label="Menu pustakawan" class="sidebar__nav">
+     <a aria-current="page" class="sidebar__link sidebar__link--active" data-route="beranda.html" role="link" tabindex="0">
+      <svg aria-hidden="true" class="icon icon--sm">
+       <use href="#i-grid">
+       </use>
+      </svg>
+      <span>Beranda</span>
+     </a>
+     <a class="sidebar__link" data-route="data-buku.html" role="link" tabindex="0">
+      <svg aria-hidden="true" class="icon icon--sm">
+       <use href="#i-book">
+       </use>
+      </svg>
+      <span>Data Buku</span>
+     </a>
+     <a class="sidebar__link" data-route="data-anggota.html" role="link" tabindex="0">
+      <svg aria-hidden="true" class="icon icon--sm">
+       <use href="#i-users">
+       </use>
+      </svg>
+      <span>Data Anggota</span>
+     </a>
+     <a class="sidebar__link" data-route="transaksi.html" role="link" tabindex="0">
+      <svg aria-hidden="true" class="icon icon--sm">
+       <use href="#i-swap">
+       </use>
+      </svg>
+      <span>Transaksi</span>
+     </a>
+     <a class="sidebar__link sidebar__link--logout" data-route="../auth/login/pustakawan.html" role="link" tabindex="0">
+      <svg aria-hidden="true" class="icon icon--sm">
+       <use href="#i-logout">
+       </use>
+      </svg>
+      <span>Keluar</span>
+     </a>
+    </nav>
+   </aside>
+   <main class="admin-content">
+    <section aria-labelledby="page-title" class="admin-profile panel">
+     <h1 class="page-title" id="page-title">Admin Perpustakaan</h1>
+     <div class="user-info">
+      <span aria-hidden="true" class="user-info__avatar user-info__avatar--large">
+       <svg class="icon icon--lg">
+        <use href="#i-profile">
+        </use>
+       </svg>
+      </span>
+      <dl class="profile__list">
+       <div>
+        <dt>Nama Admin</dt>
+        <dd id="adminName">Memuat nama admin...</dd>
+       </div>
+       <div>
+        <dt>NIP</dt>
+        <dd id="adminNip">Memuat NIP...</dd>
+       </div>
+      </dl>
+     </div>
+    </section>
+    <section aria-labelledby="stock-title" class="stock-section">
+     <h2 class="section-title" id="stock-title">Stok yang tersedia</h2>
+     <div aria-live="polite" class="book-grid book-grid--admin" data-home-book-list="">
+      <p class="pb-stock-empty">Memuat data stok buku...</p>
+     </div>
+    </section>
+    <dialog aria-labelledby="bookDetailTitle" class="pb-book-dialog" id="bookDetailDialog">
+     <div class="pb-book-dialog__panel">
+      <button aria-label="Tutup detail" class="pb-book-dialog__close" data-close-book-detail="" type="button">×</button>
+      <h2 id="bookDetailTitle">Detail Buku</h2>
+      <dl class="pb-book-dialog__details">
+       <div>
+        <dt>Penulis</dt>
+        <dd id="bookDetailAuthor">-</dd>
+       </div>
+       <div>
+        <dt>Kategori</dt>
+        <dd id="bookDetailCategory">-</dd>
+       </div>
+       <div>
+        <dt>Stok</dt>
+        <dd id="bookDetailStock">-</dd>
+       </div>
+       <div>
+        <dt>Deskripsi</dt>
+        <dd id="bookDetailDescription">-</dd>
+       </div>
+      </dl>
+     </div>
+    </dialog>
+   </main>
+  </div>
+<script defer src="../../js/shared/app.js"></script>
+<script defer src="../../js/shared/covers.js?v=20261123-coverfix"></script>
+  <script defer src="../../js/pustakawan/buku.js?v=20261123-coverfix"></script>
+  <script defer src="../../js/pustakawan/beranda-profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Login Pustakawan - E-Perpustakaan</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="../../../css/shared/variables.css" rel="stylesheet"/>
+  <link href="../../../css/shared/base.css" rel="stylesheet"/>
+  <link href="../../../css/shared/utilities.css" rel="stylesheet"/>
+  <link href="../../../css/shared/components.css" rel="stylesheet"/>
+  <link href="../../../css/auth/auth.css?v=20261123-login-spacing-4" rel="stylesheet"/>
+  <link href="../../../css/shared/layout.css" rel="stylesheet"/>
+  <link href="../../../css/shared/responsive.css" rel="stylesheet"/>
+ </head>
+ <body class="auth-login">
+  <svg aria-hidden="true" class="icon-sprite">
+   <symbol id="i-cap" viewbox="0 0 24 24">
+    <path d="M22 10 12 5 2 10l10 5z">
+    </path>
+    <path d="M6 12v5c3 3 9 3 12 0v-5">
+    </path>
+   </symbol>
+   <symbol id="i-book" viewbox="0 0 24 24">
+    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z">
+    </path>
+    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z">
+    </path>
+   </symbol>
+   <symbol id="i-user" viewbox="0 0 24 24">
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2">
+    </path>
+    <circle cx="12" cy="7" r="4">
+    </circle>
+   </symbol>
+   <symbol id="i-lock" viewbox="0 0 24 24">
+    <rect height="11" rx="2" width="18" x="3" y="11">
+    </rect>
+    <path d="M7 11V7a5 5 0 0 1 10 0v4">
+    </path>
+   </symbol>
+   <symbol id="i-eye" viewbox="0 0 24 24">
+    <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z">
+    </path>
+    <circle cx="12" cy="12" r="3">
+    </circle>
+   </symbol>
+   <symbol id="i-mail" viewbox="0 0 24 24">
+    <rect height="16" rx="2" width="20" x="2" y="4">
+    </rect>
+    <path d="m22 7-10 6L2 7">
+    </path>
+   </symbol>
+   <symbol id="i-login" viewbox="0 0 24 24">
+    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4">
+    </path>
+    <path d="m10 17 5-5-5-5">
+    </path>
+    <path d="M15 12H3">
+    </path>
+   </symbol>
+   <symbol id="i-userplus" viewbox="0 0 24 24">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2">
+    </path>
+    <circle cx="9" cy="7" r="4">
+    </circle>
+    <path d="M19 8v6M22 11h-6">
+    </path>
+   </symbol>
+  </svg>
+  <main class="auth-page">
+   <section aria-labelledby="judul" class="auth-card">
+    <header class="auth-card__header">
+     <img alt="Logo Universitas Khairun" class="auth-card__logo" src="../../../assets/logo.png"/>
+     <h1 class="auth-card__title" id="judul">E - PERPUSTAKAAN</h1>
+     <p class="auth-card__subtitle">UNIVERSITAS KHAIRUN</p>
+    </header>
+    <nav aria-label="Masuk sebagai" class="role-tabs">
+     <a class="role-tabs__link" href="anggota.html">
+      <svg class="icon">
+       <use href="#i-cap">
+       </use>
+      </svg>
+      Anggota
+     </a>
+     <a aria-current="page" class="role-tabs__link role-tabs__link--active" href="pustakawan.html">
+      <svg class="icon">
+       <use href="#i-book">
+       </use>
+      </svg>
+      Pustakawan
+     </a>
+     <a class="role-tabs__link" href="kepus.html">
+      <svg class="icon">
+       <use href="#i-user">
+       </use>
+      </svg>
+      Kepus
+     </a>
+    </nav>
+    <p class="auth-card__hint">Silakan login untuk melanjutkan</p>
+    <form class="form" data-auth-form="login" data-user-role="pustakawan" novalidate="">
+     <div class="form__group">
+      <label class="form__label" for="npm">NPM / NIP / KODE KEPUS</label>
+      <div class="input-field">
+       <span class="input-field__icon">
+        <svg class="icon">
+         <use href="#i-user">
+         </use>
+        </svg>
+       </span>
+       <input aria-describedby="npm-error" autocomplete="username" class="form__input form__input--icon" id="npm" name="npm" placeholder="Masukkan NIP / Kode Pustakawan" required="" type="text"/>
+      </div>
+      <p class="form__error" data-error-for="npm" hidden="" id="npm-error" role="alert">
+      </p>
+     </div>
+     <div class="form__group">
+      <label class="form__label" for="password">PASSWORD</label>
+      <div class="input-field">
+       <span class="input-field__icon">
+        <svg class="icon">
+         <use href="#i-lock">
+         </use>
+        </svg>
+       </span>
+       <input aria-describedby="password-error" autocomplete="current-password" class="form__input form__input--icon form__input--with-toggle" id="password" name="password" placeholder="Masukkan password Anda" required="" type="password"/>
+       <button aria-label="Tampilkan password" aria-pressed="false" class="input-field__toggle" data-toggle-password="password" type="button">
+        <svg class="icon">
+         <use href="#i-eye">
+         </use>
+        </svg>
+       </button>
+      </div>
+      <p class="form__error" data-error-for="password" hidden="" id="password-error" role="alert">
+      </p>
+      <span class="auth-card__link-spacer" aria-hidden="true"></span>
+     </div>
+     <div class="form__group">
+      <label class="visually-hidden" for="email">Email</label>
+      <div class="input-field">
+       <span class="input-field__icon">
+        <svg class="icon">
+         <use href="#i-mail">
+         </use>
+        </svg>
+       </span>
+       <input aria-describedby="email-error" autocomplete="email" class="form__input form__input--icon" id="email" name="email" placeholder="Masukkan email anda" type="email"/>
+      </div>
+      <p class="form__error" data-error-for="email" hidden="" id="email-error" role="alert">
+      </p>
+     </div>
+     <button class="btn btn--primary" type="submit">
+      <svg class="icon">
+       <use href="#i-login">
+       </use>
+      </svg>
+      Login
+     </button>
+     <p aria-live="polite" class="auth-feedback" data-auth-feedback="" hidden="" role="status">
+     </p>
+    </form>
+    <footer class="auth-card__footer">
+     <p>
+      belum punya akun?
+      <a href="../daftar/pustakawan.html">
+       daftar disini!
+       <svg class="icon">
+        <use href="#i-userplus">
+        </use>
+       </svg>
+      </a>
+     </p>
+    </footer>
+   </section>
+  </main>
+  <script defer="" src="../../../js/shared/app.js">
+  </script>
+  <script defer="" src="../../../js/auth/staff-auth.js">
+  </script>
+ </body>
+</html>

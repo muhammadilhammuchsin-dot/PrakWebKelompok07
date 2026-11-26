@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cari Informatika &amp; Komputer - E-Perpustakaan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="../../css/shared/variables.css" rel="stylesheet">
+    <link href="../../css/shared/base.css" rel="stylesheet">
+    <link href="../../css/shared/utilities.css" rel="stylesheet">
+    <link href="../../css/shared/components.css" rel="stylesheet">
+    <link href="../../css/shared/layout.css" rel="stylesheet">
+    <link href="../../css/shared/responsive.css" rel="stylesheet">
+    <link href="../../css/anggota/anggota.css?v=20261123-clean" rel="stylesheet">
+</head>
+<body class="search-page">
+<svg aria-hidden="true" class="icon-sprite">
+        <symbol id="i-arrow" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </symbol>
+        <symbol id="i-book" viewBox="0 0 24 24">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+        </symbol>
+        <symbol id="i-chevron" viewBox="0 0 24 24">
+            <path d="m6 9 6 6 6-6"></path>
+        </symbol>
+        <symbol id="i-logout" viewBox="0 0 24 24">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <path d="m16 17 5-5-5-5"></path>
+            <path d="M21 12H9"></path>
+        </symbol>
+        <symbol id="i-search" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+        </symbol>
+    </svg>
+<header class="site-header">
+        <div class="site-header__inner">
+            <a class="brand" data-route="beranda.html" href="beranda.html">
+                <span class="brand__icon">
+                    <svg aria-hidden="true" class="icon">
+                        <use href="#i-book"></use>
+                    </svg>
+                </span>
+                <span class="brand__text">
+                    <span class="brand__name">E-Perpustakaan</span>
+                    <span class="brand__sub">Universitas Khairun</span>
+                </span>
+            </a>
+            <nav aria-label="Menu utama" class="main-nav">
+                <ul class="main-nav__list">
+                    <li>
+                        <a class="main-nav__link"
+                           data-route="beranda.html"
+                           href="beranda.html">beranda</a>
+                    </li>
+                    <li>
+                        <a aria-current="page"
+                           class="main-nav__link main-nav__link--active"
+                           data-route="cari.html"
+                           href="cari.html">cari buku</a>
+                    </li>
+                    <li>
+                        <a class="main-nav__link main-nav__link--logout"
+                           data-route="../auth/login/anggota.html"
+                           href="../auth/login/anggota.html">
+                            keluar
+                            <svg aria-hidden="true" class="icon icon--sm">
+                                <use href="#i-logout"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<main class="page page--search">
+        <h1 class="visually-hidden">Cari Buku Informatika</h1>
+        <section aria-label="Pencarian buku" class="panel search-panel">
+            <div class="search-bar" data-search-form role="search">
+                <div class="input-field search-bar__field">
+                    <span class="input-field__icon">
+                        <svg aria-hidden="true" class="icon icon--sm">
+                            <use href="#i-search"></use>
+                        </svg>
+                    </span>
+                    <label class="visually-hidden" for="keyword">Nama atau ID buku</label>
+                    <input
+                        class="search-bar__input"
+                        id="keyword"
+                        name="keyword"
+                        placeholder="masukkan nama / id buku..."
+                        type="search"
+                    >
+                </div>
+                <button
+                    class="btn btn--navy search-bar__button"
+                    data-action="search"
+                    type="button"
+                >
+                    <svg aria-hidden="true" class="icon icon--sm">
+                        <use href="#i-search"></use>
+                    </svg>
+                    Cari
+                </button>
+            </div>
+<details class="dropdown" data-category-dropdown>
+                <summary class="dropdown__summary">
+                    Kategori
+                    <svg aria-hidden="true" class="icon icon--sm">
+                        <use href="#i-chevron"></use>
+                    </svg>
+                </summary>
+                <ul class="dropdown__list">
+                    <li>
+                        <a aria-current="page"
+                           class="dropdown__link dropdown__link--selected"
+                           data-route="cari-informatika.html"
+                           href="cari-informatika.html">Informatika &amp; Komputer</a>
+                    </li>
+                    <li>
+                        <a class="dropdown__link"
+                           data-route="cari-sains.html"
+                           href="cari-sains.html">Sains &amp; Matematika</a>
+                    </li>
+                    <li>
+                        <a class="dropdown__link"
+                           data-route="cari-sosial.html"
+                           href="cari-sosial.html">Sosial &amp; Bisnis</a>
+                    </li>
+                    <li>
+                        <a class="dropdown__link"
+                           data-route="cari-sastra.html"
+                           href="cari-sastra.html">Sastra &amp; Bahasa</a>
+                    </li>
+                </ul>
+            </details>
+        </section>
+<section aria-labelledby="book-section-title">
+            <h2 class="section-title" id="book-section-title">
+                <svg aria-hidden="true" class="icon icon--sm">
+                    <use href="#i-book"></use>
+                </svg>
+                Rekomendasi Buku
+            </h2>
+            <div class="book-grid book-grid--two">
+                <p class="catalog-empty-state" role="status">Memuat katalog buku...</p>
+            </div>
+        </section>
+    </main>
+<script defer src="../../js/shared/app.js?v=20261115-2"></script>
+<script defer src="../../js/shared/covers.js?v=20261123-coverfix"></script>
+<script defer src="../../js/anggota/buku.js?v=20261123-coverfix"></script>
+</body>
+</html>

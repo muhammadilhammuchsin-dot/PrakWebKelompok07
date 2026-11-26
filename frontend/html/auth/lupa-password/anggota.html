@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="#d9f1ff" name="theme-color"/>
+  <title>Pulihkan Password - E-Perpustakaan</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="../../../css/shared/variables.css" rel="stylesheet"/>
+  <link href="../../../css/shared/base.css" rel="stylesheet"/>
+  <link href="../../../css/shared/utilities.css" rel="stylesheet"/>
+  <link href="../../../css/shared/components.css" rel="stylesheet"/>
+  <link href="../../../css/auth/auth.css" rel="stylesheet"/>
+  <link href="../../../css/shared/layout.css" rel="stylesheet"/>
+  <link href="../../../css/shared/responsive.css" rel="stylesheet"/>
+ </head>
+ <body class="auth-forgot">
+  <svg aria-hidden="true" class="icon-sprite">
+   <symbol id="i-arrow-left" viewbox="0 0 24 24">
+    <path d="M19 12H5M12 19l-7-7 7-7">
+    </path>
+   </symbol>
+   <symbol id="i-mail" viewbox="0 0 24 24">
+    <rect height="15" rx="2" width="19" x="2.5" y="4.5">
+    </rect>
+    <path d="m3.5 6 8.5 6.5L20.5 6">
+    </path>
+   </symbol>
+   <symbol id="i-lock" viewbox="0 0 24 24">
+    <rect height="12" rx="2" width="16" x="4" y="10">
+    </rect>
+    <path d="M8 10V7a4 4 0 0 1 8 0v3">
+    </path>
+    <circle cx="12" cy="16" r="1">
+    </circle>
+   </symbol>
+   <symbol id="i-eye" viewbox="0 0 24 24">
+    <path d="M1.5 12s3.8-7 10.5-7 10.5 7 10.5 7-3.8 7-10.5 7S1.5 12 1.5 12z">
+    </path>
+    <circle cx="12" cy="12" r="3">
+    </circle>
+   </symbol>
+   <symbol id="i-shield" viewbox="0 0 24 24">
+    <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z">
+    </path>
+    <path d="m9 12 2 2 4-4">
+    </path>
+   </symbol>
+  </svg>
+  <main class="auth-page">
+   <section aria-labelledby="forgot-title" class="auth-card auth-card--wide forgot-card">
+    <header class="auth-card__header auth-card__header--row forgot-header">
+     <a aria-label="Kembali ke halaman login" class="back-link back-link--dark forgot-back-login" data-forgot-back-login="" href="../login/anggota.html">
+      <svg aria-hidden="true" class="icon icon--lg">
+       <use href="#i-arrow-left">
+       </use>
+      </svg>
+     </a>
+     <button aria-label="Kembali ke langkah sebelumnya" class="back-link back-link--dark forgot-back-step" data-forgot-back="" hidden="" type="button">
+      <svg aria-hidden="true" class="icon icon--lg">
+       <use href="#i-arrow-left">
+       </use>
+      </svg>
+     </button>
+     <div class="forgot-header__text">
+      <h1 class="auth-card__title auth-card__title--form" data-forgot-title="" id="forgot-title">Pulihkan Password</h1>
+      <p class="forgot-step-caption" data-forgot-caption="">Langkah 1 dari 3</p>
+     </div>
+    </header>
+    <div aria-label="Progres pemulihan password" class="forgot-progress">
+     <span class="forgot-progress__item is-active" data-forgot-progress="1">
+     </span>
+     <span class="forgot-progress__item" data-forgot-progress="2">
+     </span>
+     <span class="forgot-progress__item" data-forgot-progress="3">
+     </span>
+    </div>
+    <form class="form forgot-form" data-auth-form="forgot-password" data-user-role="anggota" novalidate="">
+     <section class="forgot-step is-active" data-forgot-step="1">
+      <div class="forgot-step__content">
+       <div class="forgot-intro">
+        <h2>Masukkan email aktif</h2>
+        <p>Kami akan mengirim kode verifikasi ke email yang terdaftar pada akun E-Perpustakaan Anda.</p>
+       </div>
+       <div class="form__group">
+        <label class="form__label" for="email">Masukkan email aktif</label>
+        <div class="input-field">
+         <span aria-hidden="true" class="input-field__icon">
+          <svg class="icon">
+           <use href="#i-mail">
+           </use>
+          </svg>
+         </span>
+         <input aria-describedby="email-error" autocomplete="email" class="form__input form__input--icon" id="email" inputmode="email" maxlength="150" name="email" placeholder="Contoh: nama@email.com" required="" type="email"/>
+        </div>
+        <p class="form__error" data-error-for="email" hidden="" id="email-error" role="alert">
+        </p>
+       </div>
+       <div class="forgot-info">
+        <span aria-hidden="true" class="forgot-info__icon">i</span>
+        <p>Pastikan email masih aktif dan dapat Anda akses.</p>
+       </div>
+      </div>
+      <div class="forgot-actions">
+       <button class="btn btn--primary btn--block btn--tall" data-forgot-action="send-otp" type="button">Kirim Kode OTP</button>
+       <p class="forgot-footnote">Kode verifikasi hanya berlaku selama 5 menit.</p>
+      </div>
+     </section>
+     <section class="forgot-step" data-forgot-step="2" hidden="">
+      <div class="forgot-step__content">
+       <div class="forgot-intro">
+        <h2>Periksa email Anda</h2>
+        <p>Masukkan 6 digit kode verifikasi yang telah dikirim ke:</p>
+        <strong class="forgot-destination" data-forgot-destination="">
+        </strong>
+       </div>
+       <div class="form__group">
+        <label class="form__label" for="otp-digit-1">Masukkan Kode OTP</label>
+        <div aria-label="Enam digit kode OTP" class="forgot-otp" role="group">
+         <input aria-label="Digit OTP 1" autocomplete="one-time-code" class="forgot-otp__digit" data-otp-digit="" id="otp-digit-1" inputmode="numeric" maxlength="1" type="text"/>
+         <input aria-label="Digit OTP 2" class="forgot-otp__digit" data-otp-digit="" inputmode="numeric" maxlength="1" type="text"/>
+         <input aria-label="Digit OTP 3" class="forgot-otp__digit" data-otp-digit="" inputmode="numeric" maxlength="1" type="text"/>
+         <input aria-label="Digit OTP 4" class="forgot-otp__digit" data-otp-digit="" inputmode="numeric" maxlength="1" type="text"/>
+         <input aria-label="Digit OTP 5" class="forgot-otp__digit" data-otp-digit="" inputmode="numeric" maxlength="1" type="text"/>
+         <input aria-label="Digit OTP 6" class="forgot-otp__digit" data-otp-digit="" inputmode="numeric" maxlength="1" type="text"/>
+        </div>
+        <p class="form__error" data-forgot-error="otp" hidden="" role="alert">
+        </p>
+       </div>
+       <p class="forgot-help">Periksa kotak masuk atau folder spam pada email Anda.</p>
+       <div class="forgot-otp-meta">
+        <span data-otp-timer="">Kode berlaku 05:00</span>
+        <button class="forgot-text-button" data-forgot-action="resend-otp" type="button">Kirim ulang kode</button>
+       </div>
+      </div>
+      <div class="forgot-actions">
+       <button class="btn btn--primary btn--block btn--tall" data-forgot-action="verify-otp" type="button">Verifikasi Kode</button>
+       <p class="forgot-footnote">Jangan bagikan kode OTP kepada siapa pun.</p>
+      </div>
+     </section>
+     <section class="forgot-step" data-forgot-step="3" hidden="">
+      <div class="forgot-step__content">
+       <div class="forgot-intro">
+        <h2>Buat password baru</h2>
+        <p>Buat password baru yang kuat untuk melindungi akun E-Perpustakaan Anda.</p>
+       </div>
+       <div class="form__group">
+        <label class="form__label" for="password">Password baru</label>
+        <div class="input-field">
+         <span aria-hidden="true" class="input-field__icon">
+          <svg class="icon">
+           <use href="#i-lock">
+           </use>
+          </svg>
+         </span>
+         <input aria-describedby="password-error" autocomplete="new-password" class="form__input form__input--icon form__input--with-toggle" id="password" maxlength="100" minlength="8" name="password" placeholder="Minimal 8 karakter" required="" type="password"/>
+         <button aria-label="Tampilkan password" aria-pressed="false" class="input-field__toggle" data-toggle-password="password" type="button">
+          <svg aria-hidden="true" class="icon">
+           <use href="#i-eye">
+           </use>
+          </svg>
+         </button>
+        </div>
+        <p class="form__error" data-error-for="password" hidden="" id="password-error" role="alert">
+        </p>
+       </div>
+       <div class="form__group">
+        <label class="form__label" for="password-confirm">Konfirmasi password Anda</label>
+        <div class="input-field">
+         <span aria-hidden="true" class="input-field__icon">
+          <svg class="icon">
+           <use href="#i-lock">
+           </use>
+          </svg>
+         </span>
+         <input aria-describedby="password-confirm-error" autocomplete="new-password" class="form__input form__input--icon form__input--with-toggle" id="password-confirm" maxlength="100" minlength="8" name="password-confirm" placeholder="Ulangi password baru" required="" type="password"/>
+         <button aria-label="Tampilkan konfirmasi password" aria-pressed="false" class="input-field__toggle" data-toggle-password="password-confirm" type="button">
+          <svg aria-hidden="true" class="icon">
+           <use href="#i-eye">
+           </use>
+          </svg>
+         </button>
+        </div>
+        <p class="form__error" data-error-for="password-confirm" hidden="" id="password-confirm-error" role="alert">
+        </p>
+       </div>
+       <div class="forgot-password-rules">
+        <p>• Minimal 8 karakter.</p>
+        <p>• Gunakan kombinasi huruf dan angka.</p>
+       </div>
+      </div>
+      <div class="forgot-actions">
+       <button class="btn btn--primary btn--block btn--tall" data-forgot-action="save-password" type="button">Simpan Password</button>
+       <p class="forgot-footnote">Pastikan password baru mudah Anda ingat dan sulit ditebak.</p>
+      </div>
+     </section>
+     <p aria-live="polite" class="auth-feedback" data-auth-feedback="" hidden="" role="status">
+     </p>
+    </form>
+   </section>
+  </main>
+  <script defer="" src="../../../js/shared/app.js">
+  </script>
+  <script defer="" src="../../../js/auth/anggota-auth.js">
+  </script>
+ </body>
+</html>

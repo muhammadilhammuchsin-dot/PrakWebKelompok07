@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Beranda - E-Perpustakaan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="../../css/shared/variables.css" rel="stylesheet">
+    <link href="../../css/shared/base.css" rel="stylesheet">
+    <link href="../../css/shared/utilities.css" rel="stylesheet">
+    <link href="../../css/shared/components.css" rel="stylesheet">
+    <link href="../../css/shared/layout.css" rel="stylesheet">
+<link href="../../css/shared/responsive.css" rel="stylesheet">
+<link href="../../css/anggota/anggota.css?v=20261123-clean" rel="stylesheet">
+<link href="../../css/anggota/beranda-anggota.css?v=20261123-clean" rel="stylesheet">
+</head>
+<body class="home-page">
+<svg aria-hidden="true" class="icon-sprite">
+        <symbol id="i-book" viewBox="0 0 24 24">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+        </symbol>
+        <symbol id="i-info" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 16v-4M12 8h.01"/>
+        </symbol>
+        <symbol id="i-logout" viewBox="0 0 24 24">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+            <path d="m16 17 5-5-5-5"/>
+            <path d="M21 12H9"/>
+        </symbol>
+        <symbol id="i-profile" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <circle cx="12" cy="10" r="3"/>
+            <path d="M7 20.7a5 5 0 0 1 10 0"/>
+        </symbol>
+        <symbol id="i-trend" viewBox="0 0 24 24">
+            <path d="m22 7-8.5 8.5-5-5L2 17"/>
+            <path d="M16 7h6v6"/>
+        </symbol>
+    </svg>
+<header class="site-header">
+        <div class="site-header__inner">
+            <div class="brand" aria-label="E-Perpustakaan">
+                <span class="brand__icon">
+                    <svg aria-hidden="true" class="icon">
+                        <use href="#i-book"></use>
+                    </svg>
+                </span>
+                <span class="brand__text">
+                    <span class="brand__name">E-Perpustakaan</span>
+                    <span class="brand__sub">Universitas Khairun</span>
+                </span>
+            </div>
+            <nav aria-label="Menu utama" class="main-nav">
+                <ul class="main-nav__list">
+                    <li>
+                        <a
+                            aria-current="page"
+                            class="main-nav__link main-nav__link--active"
+                            data-route="beranda.html"
+                            href="beranda.html">beranda</a>
+                    </li>
+                    <li>
+                        <a
+                            class="main-nav__link"
+                            data-route="cari.html"
+                            href="cari.html">cari buku</a>
+                    </li>
+                    <li>
+                        <a
+                            class="main-nav__link main-nav__link--logout"
+                            data-route="../auth/login/anggota.html"
+                            href="../auth/login/anggota.html">
+                            keluar
+                            <svg aria-hidden="true" class="icon icon--sm">
+                                <use href="#i-logout"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<main class="page">
+<div class="user-bar">
+            <span class="user-bar__avatar">
+                <svg aria-hidden="true" class="icon icon--lg">
+                    <use href="#i-profile"></use>
+                </svg>
+            </span>
+            <strong data-member-name="">Anggota</strong>
+        </div>
+<section aria-labelledby="sapaan" class="hero">
+            <h1 class="hero__title" id="sapaan">
+                Hallo,
+                <span data-member-name="">Anggota</span>
+            </h1>
+            <p class="hero__text">Selamat datang di E-Perpustakaan Universitas Khairun</p>
+        </section>
+<section aria-live="polite" class="panel panel--outlined">
+            <h2 class="panel__title">
+                Minat Baca Anda :
+                <strong
+                    class="highlight"
+                    data-reading-interest="">Belum terdeteksi</strong>
+            </h2>
+        </section>
+<section class="panel">
+            <h2 class="panel__title panel__title--divided">
+                <svg aria-hidden="true" class="icon icon--sm">
+                    <use href="#i-trend"></use>
+                </svg>
+                Kategori terpopuler
+            </h2>
+            <div aria-live="polite" class="topic-card">
+                <span data-popular-category="">Belum ada data pencarian</span>
+                <a
+                    class="topic-card__link"
+                    data-popular-category-link=""
+                    data-route="cari.html"
+                    hidden
+                    href="cari.html">Detail</a>
+            </div>
+        </section>
+<section class="home-books" aria-labelledby="latest-books-title">
+            <h2 class="section-title" id="latest-books-title">
+                <svg aria-hidden="true" class="icon icon--sm">
+                    <use href="#i-book"></use>
+                </svg>
+                Buku terbaru
+            </h2>
+            <div class="book-grid">
+                <p class="catalog-empty-state" role="status">Memuat buku terbaru...</p>
+            </div>
+        </section>
+    </main>
+<script defer src="../../js/shared/app.js"></script>
+<script defer src="../../js/shared/covers.js?v=20261123-coverfix"></script>
+<script defer src="../../js/anggota/kategori-terpopuler.js"></script>
+<script defer src="../../js/anggota/knn-rekomendasi.js"></script>
+<script defer src="../../js/anggota/beranda-buku.js?v=20261123-coverfix"></script>
+</body>
+</html>
